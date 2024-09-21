@@ -13,7 +13,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Usage
 
 This gem allows to extract the headers required in httparty requests. 
-
+If you have some issue with rails c, you can install or update the gem 'globalid'
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
