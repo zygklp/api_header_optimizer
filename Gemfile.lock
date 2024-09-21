@@ -1,0 +1,27 @@
+PATH
+  remote: .
+  specs:
+    api_header_optimizer (0.1.0)
+      net-http (~> 0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    net-http (0.1.1)
+      net-protocol
+      uri
+    net-protocol (0.2.2)
+      timeout
+    rake (13.2.1)
+    timeout (0.4.1)
+    uri (0.13.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  api_header_optimizer!
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.3.25
