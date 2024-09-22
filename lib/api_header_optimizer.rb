@@ -6,6 +6,8 @@ require_relative "api_header_optimizer/optimizer"
 require_relative "api_header_optimizer/tester"
 
 module ApiHeaderOptimizer
-  class Error < StandardError; end
-  # Your code goes here...
+  def self.optimize(address_url, headers)
+    optimizer = Optimizer.new(address_url, headers)
+    optimizer.optimize
+  end
 end
