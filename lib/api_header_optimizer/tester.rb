@@ -45,18 +45,15 @@ module ApiHeaderOptimizer
     def make_request(headers)
       http = Net::HTTP.new(@uri.host, @uri.port)
       http.use_ssl = @uri.scheme == 'https'
-      http.start do |http|
-        headers.each do |header_set|
-          request = Net::HTTP::Get.new(@uri.path)
-          header_set.each { |key, value| request[key] = value }
-          begin
-            response = http.request(request)
-            return response if response.code.to_i.between?(200, 299) # Başarılı yanıtlar
-          rescue => e
-            puts "Request failed: #{e.message}"
-            return nil
-          end
-        end
+      request = Net::HTTP::Get.new(@uri.path)
+      headers.each { |key, value| request[key] = value }
+
+      begin
+        response = http.request(request)
+        return response if response.code.to_i.between?(200, 299) # Başarılı yanıtlar
+      rescue StandardError => e
+        puts "Request failed: #{e.message}"
+        return nil
       end
     end
   end
